@@ -3,6 +3,7 @@ using System.Text;
 namespace algorithms.Arrays___Hashing;
 
 public static class WordPattern {
+    // TODO rewrite for 2 dictionary strategy or hashSet to exclude ContainsValue
     //1 ms, memory beats 70,69%
     public static bool CheckWordPattern(string pattern, string s)
     {
