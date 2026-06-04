@@ -2,7 +2,8 @@ using System.Text;
 
 namespace algorithms.Arrays___Hashing;
 
-public static class WordPattern {
+public static class WordPattern
+{
     // TODO rewrite for 2 dictionary strategy or hashSet to exclude ContainsValue
     //1 ms, memory beats 70,69%
     public static bool CheckWordPattern(string pattern, string s)
@@ -26,7 +27,7 @@ public static class WordPattern {
             }
             else
             {
-                if (dict[pattern[i]]!=words[i])
+                if (dict[pattern[i]] != words[i])
                 {
                     return false;
                 }
@@ -45,7 +46,7 @@ public static class WordPattern {
         {
             return false;
         }
-        
+
         foreach (var letter in pattern)
         {
             if (!dict.ContainsKey(letter))
@@ -57,12 +58,11 @@ public static class WordPattern {
                 }
                 dict[letter] = first;
                 words.RemoveAt(0);
-                
             }
             else
             {
                 dict.TryGetValue(letter, out var value);
-                int index = words.FindIndex(word=> word == value);
+                int index = words.FindIndex(word => word == value);
                 if (index != -1)
                 {
                     words.RemoveAt(index);
@@ -74,7 +74,7 @@ public static class WordPattern {
         {
             return false;
         }
-        
+
         StringBuilder recreated = new StringBuilder();
         foreach (var letter in pattern)
         {
@@ -82,7 +82,6 @@ public static class WordPattern {
             {
                 recreated.Append(value);
             }
-            
         }
 
         string sWithoutSpace = s.Replace(" ", "");

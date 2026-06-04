@@ -1,6 +1,7 @@
 namespace algorithms.Arrays___Hashing;
 
-public static class IntersectionOfTwoArrays {
+public static class IntersectionOfTwoArrays
+{
     public static int[] Intersect(int[] nums1, int[] nums2)
     {
         Dictionary<int, int> dict = [];
@@ -25,18 +26,17 @@ public static class IntersectionOfTwoArrays {
                 elements.Add(num);
                 dict[num] -= 1;
             }
-            
         }
 
         return elements.ToArray();
     }
-    
+
     // 1 ms, slow memory
     public static int[] Intersect01(int[] nums1, int[] nums2)
     {
         Dictionary<int, int> dict = [];
         Dictionary<int, int> dict2 = [];
-        int [] elements = new int[Math.Min(nums1.Length, nums2.Length)];
+        int[] elements = new int[Math.Min(nums1.Length, nums2.Length)];
         int index = 0;
 
         dict.FillDictionary(nums1);
@@ -56,7 +56,7 @@ public static class IntersectionOfTwoArrays {
         }
 
         int[] result = new int[index];
-        // cutting zeroes to adjust correct array lenght 
+        // cutting zeroes to adjust correct array lenght
         for (int i = 0; i < index; i += 1)
         {
             result[i] = elements[i];
@@ -65,6 +65,7 @@ public static class IntersectionOfTwoArrays {
         return result;
         // return elements[..i];;
     }
+
     //[2,2]  [2,1,1] -> [2]
     //[2,2] [2,2,1] -> [2,2]
     // [3,3,2,2] -> [3,1,2] -> [3,2]
