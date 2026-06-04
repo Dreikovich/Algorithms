@@ -1,11 +1,12 @@
 namespace algorithms.Arrays___Hashing;
 
-public static class Fucis {
-    //Frequency map , 2ms 
+public static class Fucis
+{
+    //Frequency map , 2ms
     public static int FirstUniqChar(string s)
     {
-        int[] chars = new int [26];
-        foreach (var c in  s)
+        int[] chars = new int[26];
+        foreach (var c in s)
         {
             chars[c - 'a'] += 1;
         }
@@ -19,19 +20,19 @@ public static class Fucis {
 
         return -1;
     }
-    
-    ///Frequency map , 4ms, LINQ 
-    public static int FirstUniqChar2(string s) {
+
+    ///Frequency map , 4ms, LINQ
+    public static int FirstUniqChar2(string s)
+    {
         int[] chars = new int[26];
-        foreach (var c in  s)
+        foreach (var c in s)
         {
             chars[c - 'a'] += 1;
         }
 
-        return s.IndexOf(s.FirstOrDefault(c => chars[c-'a']==1));
+        return s.IndexOf(s.FirstOrDefault(c => chars[c - 'a'] == 1));
     }
-    
-    
+
     // so so
     public static int FirstUniqChar3(string s)
     {
