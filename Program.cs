@@ -4,9 +4,12 @@
     {
         Console.WriteLine("Hello!");
 
-        int[] nums = [3, 2, 4];
-        int target = 6;
+        int[] nums = [4, 3, 2, 7, 8, 2, 3, 1];
 
-        int[] result = TwoSumTask.TwoSum(nums, target);
+        FindDisappeared.FindDisappearedNumbers(nums);
+
+        GroupAnagrams.Group(["eat", "tea", "tan", "ate", "nat", "bat"]);
+
+        TopKFrequent.FindTopKFrequent([1, 1, 1, 2, 2, 3], 2);
     }
 }
