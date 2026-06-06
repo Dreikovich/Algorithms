@@ -6,8 +6,30 @@ public static class ProductExceptSelf
     // left [1,2,6,30]
     //right [105,35,7,1]
 
-    //2 ms
+    //1ms, beats 100%;
+    //memory 63.9, beats 51.05%
     public static int[] CountProductExceptSelf(int[] nums)
+    {
+        int[] result = new int[nums.Length];
+
+        result[0] = 1;
+        for (int i = 1; i < nums.Length; i++)
+        {
+            result[i] = result[i - 1] * nums[i - 1];
+        }
+
+        int rightAccumulator = 1;
+        for (int i = nums.Length - 2; i >= 0; i--)
+        {
+            var right = nums[i + 1] * rightAccumulator;
+            result[i] *= right;
+            rightAccumulator = right;
+        }
+        return result;
+    }
+
+    //2 ms
+    public static int[] CountProductExceptSelf01(int[] nums)
     {
         int[] left = new int[nums.Length];
         int[] right = new int[nums.Length];
