@@ -13,5 +13,7 @@
         TopKFrequent.FindTopKFrequent([1, 1, 1, 2, 2, 3], 2);
 
         LongestConsecutive.FindLongestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]);
+
+        Palindrom.IsPalindrome("A man, a plan, a canal: Panama");
     }
 }
