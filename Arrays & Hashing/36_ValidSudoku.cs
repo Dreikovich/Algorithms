@@ -1,15 +1,16 @@
 namespace algorithms.Arrays___Hashing;
 
-public static class ValidSudoku {
-    
-    // 4 ms, beats 36.90% 
+public static class ValidSudoku
+{
+    // TODO optimize
+    // 4 ms, beats 36.90%
     //memory 48.88 beats 62.86%
     public static bool IsValidSudoku(char[][] board)
     {
         bool isRowCorrect = false;
         bool isSubBoxCorrect = false;
         bool isColumnCorrect = false;
-        
+
         for (int i = 0; i < board.Length; i++)
         {
             for (int j = 0; j < board[i].Length; j++)
@@ -49,7 +50,8 @@ public static class ValidSudoku {
         for (int n = 0; n < board[i].Length; n++)
         {
             char val = board[n][i];
-            if(val == '.') continue;
+            if (val == '.')
+                continue;
             if (!seen.Add(val))
             {
                 return false;
@@ -67,7 +69,8 @@ public static class ValidSudoku {
             for (int n = j - 1; n < j + 2; n++)
             {
                 var val = board[m][n];
-                if(val == '.') continue;
+                if (val == '.')
+                    continue;
                 if (!seen.Add(val))
                 {
                     return false;
@@ -78,7 +81,6 @@ public static class ValidSudoku {
         return true;
     }
 
-
     private static bool CheckRow(char[][] board, int i)
     {
         var seen = new HashSet<char>();
@@ -86,7 +88,8 @@ public static class ValidSudoku {
         for (int n = 0; n < board[i].Length; n++)
         {
             char val = board[i][n];
-            if(val == '.') continue;
+            if (val == '.')
+                continue;
             if (!seen.Add(val))
             {
                 return false;
