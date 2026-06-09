@@ -1,6 +1,7 @@
 namespace algorithms.Two_Pointers___Sliding_Window;
 
-public class Str {
+public class Str
+{
     // 0 ms, beats 100%
     public void ReverseString(char[] s)
     {
